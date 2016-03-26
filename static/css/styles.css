@@ -106,7 +106,7 @@ iframe {
 
 a {
     background-color: #A45;
-    width: 49%;
+    width: 25%;
     display: inline-block;
     padding: 1rem;
     color: #FFF;
@@ -326,7 +326,7 @@ a:hover {
 }
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
     html{
         font-size: 12px;
     }
