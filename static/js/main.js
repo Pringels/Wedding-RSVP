@@ -1,4 +1,8 @@
 
+console.log("Dont mess with my site please Werner? Same goes for you Chris :P");
+
+
+
 $( document ).ready(function() {
 
     $('.search-song').on('input', function(){
