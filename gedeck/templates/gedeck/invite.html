@@ -8,8 +8,8 @@
 
 
 	<div class="title invite-ref" data-ref="{{ invite.ref }}">
-		<h1>{{ invite.event.name }}</h1>
-		<h2>And we would love it if you could join us for the ocassion</h2>
+		<h1>RSVP</h1>
+		<h2>Please let us know whether you're coming or not.</h2>
 	</div>
 	<div class="col-lg-12 detail">
 		<br/>
@@ -29,7 +29,7 @@
 					<div class="btn-group btn-group-vertical">
 						{% for activity in invite.event.activities.all %}
 							<a href="{% url 'rsvp' invite.ref activity.id guest.id %}" type="button" class="btn {% if activity|has_activity_rsvp:guest %}btn-success{% else %}btn-default{% endif %}">
-								{{ activity.name }} <i class="fa {% if activity|has_activity_rsvp:guest %}fa-check-square-o{% else %}fa-square-o{% endif %} pull-right"></i>
+								RSVP For: <b>{{ activity.name }}</b> <i class="fa {% if activity|has_activity_rsvp:guest %}fa-check-square-o{% else %}fa-square-o{% endif %} pull-right"></i>
 							</a>
 						{% endfor %}
 						{% if invite.menu %}{# Check the invite includes menu options #}
@@ -46,11 +46,15 @@
 							</a>
 						{% endif %}
 					</div>
+
 				</div>
 			</div>
 		</div>
 	{% endfor %}
+
 	</div>
+
+	<a class="huh" href="/#polterabend" target="_blank">Wait...what is a polterabend?</a>
 
 	<br/>
 
