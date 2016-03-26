@@ -11,12 +11,14 @@
 		<h1>{{ invite.event.name }}</h1>
 		<h2>And we would love it if you could join us for the ocassion</h2>
 	</div>
-
+	<div class="col-lg-12 detail">
+		<br/>
 	{% if not all_done %}
-		<p class="lead muted">{{ invite.lead|default:"Select the guests who wish to RSVP" }}</p>
+		<h2 class="muted">{{ invite.lead|default:"Select the guests who wish to RSVP" }}</h2>
 	{% else %}
-		<p class="lead">{{ invite.lead_on_complete|default:"<b>All done, Thank you!</b> If you wish to make any changes please select a guest from below:" }}</p>
+		<h2 class="">{{ invite.lead_on_complete|default:"<b>All done, Thank you!</b> If you wish to make any changes please select a guest from below" }}</h2>
 	{% endif %}
+	</div>
 	<br>
 	<div class="row">
 	{% for guest in guests %}
@@ -50,16 +52,32 @@
 	{% endfor %}
 	</div>
 
+	<br/>
+
+	<div class="col-lg-12 detail">
+		<h2>The gift of music</h2>
+		<br/>
+		<p>It just so happens that we have an abundance of rabbit-shaped salt shakers and quirky coffee cups.</p>
+		<p>So instead of giving us gifts we would really appreciate a song dedication from you.</p>
+		<p>When we listen to this song we'll be thinking of you, so please choose wisely.</p>
+	</div>
+
 	<div class="song-select">
 		{% if not song %}
-			<input class="search-song" type="text"/>
+			<input class="search-song" type="text" placeholder="Start typing your song name here (EG. 'Nancy Sinatra - These Boots Were Made For Walkin')"/>
 			<div class="search-loader">
-				Searching...
 				<img src="{% static "img/heart.svg" %}" rel="stylesheet">
+				Searching
+
 			</div>
 			<div class="search-results"></div>
 		{% else %}
-			<h1>{{ song }}</h1>
+			<div class="col-lg-12 detail">
+				<br/>
+				<h2>Your song dedication to us</h2>
+				<h1 class="track-name">{{ song }}</h1>
+			</div>
+
 		{% endif %}
 	</div>
 

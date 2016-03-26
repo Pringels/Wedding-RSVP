@@ -31,7 +31,7 @@ $( document ).ready(function() {
 
             var list = '<ul>';
             for (var key in data){
-                list += '<li><button class="add-song" data-title="' + key + '" data-name="' + data[key] + '">Add</button>' + data[key] + '</li>';
+                list += '<li class="add-song"><button data-title="' + key + '" data-name="' + data[key] + '"></button><p>' + data[key] + '</p></li>';
             }
             list += '</ul>';
            $('.search-results').html(list);
@@ -41,16 +41,19 @@ $( document ).ready(function() {
     $(document).on('click', '.add-song', function(){
 
         var ref = $('.invite-ref').data('ref');
-        var songName = $(this).data('name');
+        var $this = $(this).find('button');
+        var songName = $this.data('name');
 
         $.ajax({
          type: "GET",
          url: "/add-song/",
-         data: { title: $(this).data('title'), ref: ref, name: songName}
+         data: { title: $this.data('title'), ref: ref, name: songName}
        })
          .done(function(msg) {
-             var str = '<h3>Song added!</h3>';
-             str += '<h1>' + songName + '</h1>';
+             var str = '<div class="col-lg-12 detail">';
+             str += '<br/>';
+              str += '<h2>Your song dedication to us</h2>';
+             str += '<h1 class="track-name">' + songName + '</h1>';
             $('.song-select').html(str);
         });
     });
