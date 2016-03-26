@@ -1,0 +1,4 @@
+ve/
+project/local_settings.py
+project/local_settings.pyc
+**/*.pyc

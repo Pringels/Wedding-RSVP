@@ -1,0 +1,140 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    color: #ddd;
+}
+.background {
+    background-image: url(/static/img/kiss.jpg);
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+}
+
+.divider {
+    margin: 2rem 0 5rem 0;
+    background-color: rgba(255,255,255,0.4);
+    display: block;
+    height: 1px;
+    width: 100%;
+
+}
+
+.title h1 {
+    font-size: 5rem;
+    font-weight: 400;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+}
+
+.title {
+    margin-top: 5rem;
+}
+
+.title h2 {
+    color: #888;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.section h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: #A45;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.details {
+    margin-top: 100px;
+}
+
+.detail {
+    text-align: center;
+}
+
+.detail h1 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.detail h2 {
+    font-family: 'Pacifico',  sans-serif;
+    color: #A45;
+}
+
+.detail h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+}
+
+.detail img {
+    width: 100%;
+}
+
+iframe {
+    width: 100%;
+    margin-top:1rem;
+    border: 1rem solid rgba(0,0,0,0.4);
+}
+
+.venue {
+    margin-top: 3rem;
+}
+
+.venue img {
+    width: 100%;
+    border: 1rem solid rgba(0,0,0,0.4);
+}
+
+.venue h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+}
+
+a {
+    background-color: #A45;
+    width: 49%;
+    display: inline-block;
+    padding: 1rem;
+    color: #FFF;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.venue a:nth-child(3) {
+    background-color: #634;
+}
+
+a:hover {
+    background-color: #F66;
+    color: #FFF;
+}
+
+.polterabend {
+    margin: 5rem 0;
+    background-color: rgba(0,0,0,0.5);
+    height: 55rem;
+    border: 1px solid rgba(255,255,255,0.2);
+
+}
+
+.polterabend .title {
+    color: #A45;
+}
+
+.search-results {
+    width: 100%;
+    height: auto;
+    background-color: #A45;
+    color: #fff;
+}
+
+.search-loader {
+    display: none;
+}
+
+.search-loader.active {
+    display: block;
+}
