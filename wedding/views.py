@@ -1,6 +1,6 @@
 import json
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from django.http import HttpResponse
 
@@ -8,10 +8,24 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 
 from wedding import GMUSIC_API
-from gedeck.models import Invitation
+from gedeck.models import Invitation, Guest
 
 def home(request):
     return render(request, 'wedding/home.html')
+
+def check_rsvp(request):
+    email = request.GET.get('email')
+    print email
+
+    try:
+        guest = Guest.objects.get(email=email)
+    except:
+        return render(request, 'wedding/home.html', {
+		      'alert': 'We did not find your email address on the guest list.'
+	    })
+
+    invite = Invitation.objects.filter(guests=guest).first()
+    return redirect('invitation', invitation_ref=invite.ref)
 
 
 def venue(request):
@@ -20,7 +34,7 @@ def venue(request):
 def song_search(request):
 
     title = request.GET.get('title');
-    results = GMUSIC_API.search_all_access(title);
+    results = GMUSIC_API.search_all_access(title)
 
     results = results['song_hits']
     tracks = {}

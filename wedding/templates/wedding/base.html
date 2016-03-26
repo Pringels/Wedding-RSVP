@@ -12,6 +12,12 @@
 	<link rel="icon" type="image/x-icon" href="{% static "img/favicon.ico" %}">
 </head>
 <body>
+	{% if alert %}
+		<div class="alert">
+			{{ alert }}
+		</div>
+	{% endif %}
+
 	<div class="background">
 
 	</div>
