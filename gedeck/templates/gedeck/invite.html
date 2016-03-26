@@ -29,7 +29,7 @@
 					<div class="btn-group btn-group-vertical">
 						{% for activity in invite.event.activities.all %}
 							<a href="{% url 'rsvp' invite.ref activity.id guest.id %}" type="button" class="btn {% if activity|has_activity_rsvp:guest %}btn-success{% else %}btn-default{% endif %}">
-								RSVP For: <b>{{ activity.name }}</b> <i class="fa {% if activity|has_activity_rsvp:guest %}fa-check-square-o{% else %}fa-square-o{% endif %} pull-right"></i>
+								<b>{{ activity.name }}</b> <i class="fa {% if activity|has_activity_rsvp:guest %}fa-check-square-o{% else %}fa-square-o{% endif %} pull-right"></i>
 							</a>
 						{% endfor %}
 						{% if invite.menu %}{# Check the invite includes menu options #}

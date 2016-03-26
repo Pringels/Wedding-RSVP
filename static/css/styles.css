@@ -275,6 +275,14 @@ a:hover {
     background-color: #F88;
 }
 
+.rsvp .thumbnail .btn:before {
+    content: "RSVP For:";
+}
+
+.rsvp .thumbnail .btn-success:before {
+    content: "Confirmed: ";
+}
+
 .rsvp-input{
     width: 30%;
     height: 50px;
