@@ -1,0 +1,32 @@
+{% extends "wedding/base.html" %}
+{% load static %}
+
+{% block main %}
+
+<link href="{% static "css/dropzone.css" %}" rel="stylesheet">
+
+<div class="title">
+    <h1>Please upload your photos</h1>
+    <br/>
+    <h2>We'd love to see the stunning pics you guys took of our wedding.</h2>
+</div>
+
+<script src="{% static "js/dropzone.js" %}"></script>
+
+<form action="/upload/"
+      class="dropzone"
+      id="my-awesome-dropzone">
+</form>
+
+<script>
+    Dropzone.autoDiscover = false;
+    var myDropzone = new Dropzone("form#my-awesome-dropzone",
+    {
+        url: "/upload/",
+        dictDefaultMessage: "Click here or drag & drop to upload.",
+        maxFilesize: 5,
+        acceptedFiles: 'image/*'
+    });
+</script>
+
+{% endblock %}
